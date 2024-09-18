@@ -66,47 +66,47 @@ function calcformCalculate() {
     const factor = Number((LOCAL_FACTOR * GLOBAL_FACTOR).toFixed(5));
 
     if (!(validateNumber(length) && validateNumber(width) && validateNumber(height) && validateNumber(quantity))) {
-        AlertMSG('Please enter valid numbers for all dimensions and quantity.');
+        AlertMSG('Voer geldige cijfers in voor alle afmetingen en aantallen.');
         return;
     }
     if (quantity < 10 || quantity >= 1001) {
-        AlertMSG('The price for less than 10 or 1000 or more boxes cannot be calculated online. Please request a quote.');
+        AlertMSG('De prijs voor minder dan 10 of meer dan 1.000 dozen kunnen wij niet online berekenen. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
     if (width + length + 8 > 2000) {
-        AlertMSG('The dimensions are too large to calculate the price online. Please contact us for a quote.');
+        AlertMSG('De afmetingen zijn te groot om de prijs online te berekenen. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
     if (width + length + width + length + 15 < 600) {
-        AlertMSG('We cannot calculate a price directly for these dimensions. Please contact us for a quote.');
+        AlertMSG('Voor deze afmetingen kunnen wij niet direct een prijs berkenen. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
     if ((width + length + width + length + 15 > 4700) && (quantity > 50)) {
-        AlertMSG('We cannot calculate a price directly for these dimensions. Please contact us for a quote.');
+        AlertMSG('Voor deze afmetingen kunnen wij niet direct een prijs berkenen. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
     if (((width) + (height + 8) < 200)) {
-        AlertMSG('The height of the box is very limited. Please contact us for a quote.');
+        AlertMSG('De hoogte van de doos is erg beperkt. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
     if (width + height + 15 > 1800) {
-        AlertMSG('The height + width is more than 1780 mm. Please contact us for a quote.');
+        AlertMSG('De hoogte + breedte is meer dan 1780 mm. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
     if ((length < width)) {
-        AlertMSG('The length should always be greater than the width. Please adjust the length/width.');
+        AlertMSG('De lengtemaat dient altijd groter te zijn dan de breedte. Pas de lengte/breedte aan.');
         return;
     }
     if ((length < 100)) {
-        AlertMSG('The length of the box is very limited. Please contact us for a quote.');
+        AlertMSG('De lengte van de doos is erg beperkt. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
     if ((width < 100)) {
-        AlertMSG('The width of the box is very limited. Please contact us for a quote.');
+        AlertMSG('De breedte van de doos is erg beperkt. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
     if ((height < 60)) {
-        AlertMSG('The height of the box is very limited. Please contact us for a quote.');
+        AlertMSG('De hoogte van de doos is erg beperkt. Neem contact met ons op om hier een offerte voor te ontvangen.');
         return;
     }
 
