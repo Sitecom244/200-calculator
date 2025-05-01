@@ -372,12 +372,21 @@ document.addEventListener('DOMContentLoaded', function() {
         field.addEventListener('input', updateWarningAndButton);
     });
 
-    document.getElementById('submit-request').addEventListener('click', function(event) {
-        event.preventDefault();
-        document.getElementById('submit-request').style.display = 'none';
-        document.getElementById('loading-indicator').style.display = 'block';
+document.getElementById('submit-request').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Laatste berekening forceren
+    calcformCalculate();
+
+    document.getElementById('submit-request').style.display = 'none';
+    document.getElementById('loading-indicator').style.display = 'block';
+
+    // Kleine delay om DOM-updates toe te laten
+    setTimeout(() => {
         document.querySelector('form').submit();
-    });
+    }, 50);
+});
+
 
     // Initial calculation and warning/button state update
     calcformCalculate();
