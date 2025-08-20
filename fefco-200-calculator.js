@@ -381,10 +381,10 @@ document.getElementById('submit-request').addEventListener('click', function(eve
     document.getElementById('submit-request').style.display = 'none';
     document.getElementById('loading-indicator').style.display = 'block';
 
-    // Kleine delay om DOM-updates toe te laten
-    setTimeout(() => {
+    // Wacht tot de DOM echt geüpdatet is vóór het verzenden van het formulier
+    requestAnimationFrame(() => {
         document.querySelector('form').submit();
-    }, 50);
+    });
 });
 
 
@@ -392,3 +392,4 @@ document.getElementById('submit-request').addEventListener('click', function(eve
     calcformCalculate();
     updateWarningAndButton();
 });
+
